@@ -1,0 +1,195 @@
+/* リセット（デフォルトのスタイルをリセット） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全体スタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 100%;
+    min-width: 320px;  /* 最小幅 */
+    max-width: 100%;    /* 最大幅をウィンドウ幅に合わせる */
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* ハンバーガーメニューアイコン */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+}
+
+.menu-toggle .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+/* カレンダーコンテナ */
+#calendar-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendar-table th, #calendar-table td {
+    width: 14%;
+    height: 50px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+#calendar-table th {
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+
+/* 曜日の色 */
+#calendar-table th:nth-child(1) { background-color: #FF4C4C; color: white; } /* 日曜日: 赤 */
+#calendar-table th:nth-child(2) { background-color: #4C9BFF; color: white; } /* 月曜日: 青 */
+#calendar-table th:nth-child(3) { background-color: #FFA500; color: white; } /* 火曜日: オレンジ */
+#calendar-table th:nth-child(4) { background-color: #32CD32; color: white; } /* 水曜日: 緑 */
+#calendar-table th:nth-child(5) { background-color: #8A2BE2; color: white; } /* 木曜日: 紫 */
+#calendar-table th:nth-child(6) { background-color: #FF6347; color: white; } /* 金曜日: トマト */
+#calendar-table th:nth-child(7) { background-color: #808080; color: white; } /* 土曜日: 灰色 */
+
+/* 日付セルのデザイン */
+#calendar-table td {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#calendar-table td:hover {
+    background-color: #f1f1f1;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        width: 60%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    #navbar.open {
+        transform: translateX(0);
+    }
+
+    #navbar ul {
+        flex-direction: column;
+    }
+
+    #navbar ul li {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    #navbar ul li a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+}
+img {
+    width: 100%; /* 親要素の幅に合わせて画像のサイズを調整 */
+    max-width: 500px; /* 最大幅を500pxに制限 */
+    height: auto; /* 高さは自動的に調整 */
+    display: block; /* 画像をブロック要素として扱う（余白の調整） */
+    margin: 0 auto; /* 画像を中央に配置 */
+}
+.title-img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
